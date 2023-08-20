@@ -16,18 +16,3 @@ resource "aws_cloudwatch_log_stream" "myapp_log_stream" {
 }
 
 
-# CloudWatch Log Group for mongodb-service
-resource "aws_cloudwatch_log_group" "mongodb_log_group1" {
-  name              = "/ecs/mongodb-service"
-  retention_in_days = 30
-
-  tags = {
-    Name = "mongodb-log-group"
-  }
-}
-
-# CloudWatch Log Stream for mongodb-service
-resource "aws_cloudwatch_log_stream" "mongodb_log_stream" {
-  name           = "mongodb-log-stream"
-  log_group_name = aws_cloudwatch_log_group.mongodb_log_group1.name
-}
