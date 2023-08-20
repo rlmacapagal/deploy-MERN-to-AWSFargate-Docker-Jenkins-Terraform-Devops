@@ -11,12 +11,12 @@ RUN npm install
 WORKDIR /mern-todo-main/
 RUN npm install 
 
-RUN npm run dev
+CMD ["npm", "run", "dev"]
 
-# Stage 2: Serve the React app using Nginx
-FROM --platform=linux/amd64 nginx:1.21
-COPY --from=build /app/build /usr/share/nginx/html
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-EXPOSE 3000
-CMD ["nginx", "-g", "daemon off;"]
+# # Stage 2: Serve the React app using Nginx
+# FROM --platform=linux/amd64 nginx:1.21
+# COPY --from=build /app/build /usr/share/nginx/html
+# COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+# EXPOSE 3000
+# CMD ["nginx", "-g", "daemon off;"]
 
