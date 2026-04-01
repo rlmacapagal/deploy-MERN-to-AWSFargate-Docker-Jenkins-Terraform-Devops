@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_HUB_CREDENTIALS = credentials('docker-hub-token')
-        DOCKER_HUB_IMAGE_NAME = 'mericalp/mern-stack'
+        DOCKER_HUB_IMAGE_NAME = 'coolth/mern-stack'
         IMAGE_TAG = "v${env.BUILD_NUMBER}"
     }
     
@@ -24,9 +24,9 @@ pipeline {
         stage('Build and Push to Docker Hub') {
             steps {
                 dir('/var/jenkins_home/workspace/mern-stack/mern-stack-ci-cd-fargate') {
-                    sh "docker build -t mericalp/mern-stack ."
-                    sh "docker tag mericalp/mern-stack:latest mericalp/mern-stack:lts"
-                    sh "docker push mericalp/mern-stack:lts"
+                    sh "docker build -t $DOCKER_HUB_IMAGE_NAME ."
+                    sh "docker tag $DOCKER_HUB_IMAGE_NAME:latest $DOCKER_HUB_IMAGE_NAME:lts"
+                    sh "docker push $DOCKER_HUB_IMAGE_NAME:lts"
                 }
             }
         }
