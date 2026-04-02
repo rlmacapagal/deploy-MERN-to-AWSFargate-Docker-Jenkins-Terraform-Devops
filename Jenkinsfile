@@ -23,7 +23,7 @@ pipeline {
 
         stage('Build and Push to Docker Hub') {
             steps {
-                // dir('/var/jenkins_home/workspace/mern-stack/mern-stack-ci-cd-fargate') 
+                 dir('/var/jenkins_home/workspace/mern-stack/mern-stack-ci-cd-fargate') 
                 {
                     sh "docker tag $DOCKER_HUB_IMAGE_NAME:latest $DOCKER_HUB_IMAGE_NAME:lts"
                     sh "docker push $DOCKER_HUB_IMAGE_NAME:lts"
@@ -32,7 +32,7 @@ pipeline {
         }
          stage('Terraform Init') {
             steps {
-                // dir('/var/jenkins_home/workspace/mern-stack/mern-stack-ci-cd-fargate/tf') 
+                 dir('/var/jenkins_home/workspace/mern-stack/mern-stack-ci-cd-fargate/tf') 
                 {
                     sh 'terraform init'
                 }
