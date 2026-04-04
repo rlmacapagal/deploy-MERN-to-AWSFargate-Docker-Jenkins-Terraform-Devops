@@ -15,7 +15,7 @@ variable "az_count" {
 
 variable "app_image" {
   description = "Docker image to run in the ecs cluster"
-  default     = "mericalp/mern-stack:lts"
+  default     = "coolth/mern-stack:lts"
 }
 
 variable "app_port" {
