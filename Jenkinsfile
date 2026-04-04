@@ -33,7 +33,7 @@ pipeline {
         }
          stage('Terraform Init') {
             steps {
-                 dir('/var/jenkins_home/workspace/mern-stack/mern-stack-ci-cd-fargate/tf') 
+                 dir('tf') 
                 {
                     sh 'terraform init'
                 }
