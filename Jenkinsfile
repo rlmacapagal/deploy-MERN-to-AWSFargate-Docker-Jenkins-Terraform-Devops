@@ -48,13 +48,13 @@ pipeline {
             }
         }
         
-        // stage('Terraform Apply') {
-        //     steps {
-        //         dir('tf') {
-        //             sh 'terraform apply -auto-approve'
-        //         }
-        //     }
-        // }
+        stage('Terraform Apply') {
+            steps {
+                dir('tf') {
+                    sh 'terraform apply -auto-approve'
+                }
+            }
+        }
         
     }
 
