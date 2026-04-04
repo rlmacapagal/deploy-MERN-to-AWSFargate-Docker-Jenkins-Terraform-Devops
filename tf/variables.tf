@@ -1,6 +1,6 @@
 variable "aws_region" { 
     description = "we will create it like"
-    default     = "eu-central-1"
+    default     = "ap-southeast-1"
 }
 
 variable "ecs_task_execution_role_name" {
