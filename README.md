@@ -425,6 +425,16 @@ You've successfully deployed a MERN stack application to AWS ECS Fargate using T
 
 ---
 
+## Clean Up Resources
+
+To avoid unnecessary costs, remember to clean up your AWS resources when you're done testing:
+
+1. in docker, access the jenkins container:
+   docker exec -u root -it jj /bin/bash
+
+2. cd /var/jenkins_home/workspace/mern-pipeline/tf
+3. terraform destroy -auto-approve
+
 ## 🔗 Useful Links
 
 - [Original Article](https://medium.com/@mericac33/deploy-mern-stack-to-aws-fargate-using-terraform-and-jenkins-77b23a5803f9)
